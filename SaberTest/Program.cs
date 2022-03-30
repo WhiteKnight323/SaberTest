@@ -89,9 +89,13 @@ namespace SaberTest
                 string s = default;
                 for (int i = 0; i < ser.Count; i++)
                 {
-                    if (ser.IndexOf(ser[i].Random) != deser.IndexOf(deser[i].Random) || ser[i].Data != deser[i].Data)
+                    if (ser.IndexOf(ser[i].Random) != deser.IndexOf(deser[i].Random))
                     {
-                        s += $"Element {i + 1} is different\n";
+                        s += $"In {i + 1} element different Random value\n";
+                    }
+                    else if(ser[i].Data != deser[i].Data)
+                    {
+                        s += $"In {i + 1} element different Data value\n";
                     }
                     else
                     {
